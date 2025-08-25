@@ -1,5 +1,5 @@
 {
-  "name": "use-stage",
+  "name": "@27-lanterns/use-stage",
   "version": "0.1.0",
   "description": "A custom react hook to manage wizard or ui stage transitions",
   "keywords": [
@@ -9,7 +9,7 @@
   "license": "MIT",
   "author": "Evgenii Astapushkin",
   "type": "module",
-  "main": "index.ts",
+  "main": "package/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
