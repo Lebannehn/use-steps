@@ -1,0 +1,21 @@
+{
+  "name": "use-stage",
+  "version": "0.1.0",
+  "description": "A custom react hook to manage wizard or ui stage transitions",
+  "keywords": [
+    "hooks",
+    "react"
+  ],
+  "license": "MIT",
+  "author": "Evgenii Astapushkin",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": ">=16.8.0",
+    "@types/react": ">=16.8.0",
+    "typescript": ">=4.1.6"
+  }
+}
