@@ -3,7 +3,7 @@
         "esModuleInterop": true,
         "declaration": true,
         "removeComments": false,
-        "target": "es5",
+        "target": "es2016",
         "alwaysStrict": true,
         "baseUrl": "./package",
     },
