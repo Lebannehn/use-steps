@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "declaration": true,
+        "removeComments": false,
+        "target": "es5",
+        "alwaysStrict": true,
+        "baseUrl": "./package",
+    },
+    "include": [
+        "package/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
