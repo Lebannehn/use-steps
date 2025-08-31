@@ -7,7 +7,7 @@ import { hasNoStagesError } from './error';
 
 type Props<T> = {
 	stageList: T[],
-	mode: TStageMode,
+	mode?: TStageMode,
 };
 
 /**
