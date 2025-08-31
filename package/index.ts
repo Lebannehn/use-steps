@@ -49,6 +49,7 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 	const nextStage = () => {
 		console.log('next stage');
 		_checkStageListSanity();
+		console.log('next stage - ok');
 		if (_canProceed()) {
 			setCurrentStageIndex(currentStageIndex + 1);
 		}
@@ -56,6 +57,7 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 	const previousStage = () => {
 		console.log('previous stage');
 		_checkStageListSanity();
+		console.log('previous stage - ok');
 		if (_canProceed()) {
 			setCurrentStageIndex(currentStageIndex - 1);
 		}
@@ -66,6 +68,7 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 		if (stageList.length === 1) {
 			return;
 		}
+		console.log('setting stage - ok');
 		setCurrentStageIndex(availableStages.indexOf(stage));
 	};
 
