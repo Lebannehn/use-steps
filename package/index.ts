@@ -23,13 +23,15 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 
 	useEffect(() => {
 		console.log(availableStages);
-	}, [availableStages]);
+		console.log(currentStageIndex);
+	}, [availableStages, currentStageIndex]);
 
 	useEffect(() => {
 		setCurrentStageIndex(stageList.length ? 0 : NO_STAGE);
 	}, []);
 
 	const _checkStageListSanity = useCallback(() => {
+		console.log('checking sanity');
 		if (currentStageIndex === NO_STAGE) {
 			throw hasNoStagesError();
 		}
@@ -45,18 +47,21 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 	);
 
 	const nextStage = () => {
+		console.log('next stage');
 		_checkStageListSanity();
 		if (_canProceed()) {
 			setCurrentStageIndex(currentStageIndex + 1);
 		}
 	};
 	const previousStage = () => {
+		console.log('previous stage');
 		_checkStageListSanity();
 		if (_canProceed()) {
 			setCurrentStageIndex(currentStageIndex - 1);
 		}
 	};
 	const setStage = (stage: T) => {
+		console.log('setting stage');
 		_checkStageListSanity();
 		if (stageList.length === 1) {
 			return;
