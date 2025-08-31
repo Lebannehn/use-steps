@@ -39,11 +39,16 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 
 	const _canProceed = useCallback(
 		() => {
-			if (stageList.length === 1 || currentStageIndex === stageList.length - 1) {
+			console.log('checking can proceed');
+			if (availableStages.length === 1 || currentStageIndex === availableStages.length - 1) {
+				console.log('checking can proceed - no');
 				return false;
+			} else {
+				console.log('checking can proceed - yes');
+				return true;
 			}
 		},
-		[stageList, currentStageIndex]
+		[availableStages, currentStageIndex]
 	);
 
 	const nextStage = () => {
