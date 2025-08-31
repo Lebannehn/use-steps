@@ -2,20 +2,29 @@
   "name": "@27-lanterns/use-stage",
   "version": "0.1.0",
   "description": "A custom react hook to manage wizard or ui stage transitions",
+  "author": "Evgenii Astapushkin",
   "keywords": [
     "hooks",
     "react"
   ],
   "license": "MIT",
-  "author": "Evgenii Astapushkin",
   "type": "module",
   "main": "package/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp:build": "npx gulp build",
   },
   "dependencies": {
-    "react": ">=16.8.0",
     "@types/react": ">=16.8.0",
+    "react": ">=16.8.0",
     "typescript": ">=4.1.6"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.17",
+    "del": "^8.0.0",
+    "gulp": "^5.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
