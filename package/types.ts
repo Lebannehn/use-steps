@@ -1,4 +1,8 @@
-export type TUseStageReturn<T> = [T, () => void, () => void, (stage: T) => void, (stage: T) => boolean];
+import { Dispatch, SetStateAction } from 'react';
+
+export type UseStageReturn<T> = [
+	T, () => void, () => void, (stage: T) => void, (stage: T) => boolean, Dispatch<SetStateAction<T[]>>
+];
 
 export const STAGE_MODE = {
 	SEQUENTIAL: 'sequential',

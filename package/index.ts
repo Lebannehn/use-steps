@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { STAGE_MODE, TStageMode, TUseStageReturn } from './types';
+import { STAGE_MODE, TStageMode, UseStageReturn } from './types';
 import { NO_STAGE } from './constants';
 import { hasNoStagesError } from './error';
 
 
-type TProps<T> = {
+type Props<T> = {
 	stageList: T[],
 	mode: TStageMode,
 };
@@ -17,7 +17,7 @@ type TProps<T> = {
  * @param {Array<T>} stageList
  * @param {boolean} isCircular
  */
-const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: TProps<T>): TUseStageReturn<T> => {
+const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>): UseStageReturn<T> => {
 	const [availableStages, setAvailableStages] = useState(stageList);
 	const [currentStageIndex, setCurrentStageIndex] = useState(0);
 
@@ -67,7 +67,8 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: TProps<T>
 		nextStage,
 		previousStage,
 		setStage,
-		hasStage
+		hasStage,
+		setAvailableStages
 	];
 };
 
