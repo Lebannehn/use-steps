@@ -22,6 +22,10 @@ const useStage = <T>({ stageList = [], mode = STAGE_MODE.SEQUENTIAL }: Props<T>)
 	const [currentStageIndex, setCurrentStageIndex] = useState(0);
 
 	useEffect(() => {
+		console.log(availableStages);
+	}, [availableStages]);
+
+	useEffect(() => {
 		setCurrentStageIndex(stageList.length ? 0 : NO_STAGE);
 	}, []);
 
