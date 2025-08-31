@@ -11,7 +11,7 @@
   "type": "module",
   "main": "package/index.ts",
   "scripts": {
-    "gulp:build": "npx gulp build",
+    "gulp:build": "npx gulp build"
   },
   "dependencies": {
     "@types/react": ">=16.8.0",
