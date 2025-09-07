@@ -1,7 +1,6 @@
 .idea
 .vscode
 
-dist/
 dest/
 node_modules
 yarn/*
