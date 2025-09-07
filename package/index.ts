@@ -29,7 +29,7 @@ type Props<T> = {
  * @param {boolean} isCircular
  */
 const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsReturn<T> => {
-	const [availableStages, setAvailableStages] = useState(stepsList);
+	const [availableSteps, setAvailableSteps] = useState(stepsList);
 	const [currentStageIndex, setCurrentStageIndex] = useState(0);
 
 	useEffect(() => {
@@ -41,13 +41,13 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 			if (currentStageIndex === NO_STAGE) {
 				throw hasNoStagesError();
 			}
-			if (availableStages.length === 1) {
+			if (availableSteps.length === 1) {
 				return false;
 			}
 
 			if (!isCircular) {
 				if (isForwardDirection) {
-					return currentStageIndex !== availableStages.length - 1;
+					return currentStageIndex !== availableSteps.length - 1;
 				} else {
 					return currentStageIndex !== 0;
 				}
@@ -55,42 +55,42 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 
 			return true;
 		},
-		[availableStages, currentStageIndex]
+		[availableSteps, currentStageIndex]
 	);
 
-	const nextStage = () => {
+	const nextStep = () => {
 		if (_canProceed(1)) {
 			setCurrentStageIndex(
-				isCircular && currentStageIndex === availableStages.length - 1
+				isCircular && currentStageIndex === availableSteps.length - 1
 					? 0
 					: currentStageIndex + 1
 			);
 		}
 	};
-	const previousStage = () => {
+	const previousStep = () => {
 		if (_canProceed(0)) {
 			setCurrentStageIndex(
 				isCircular && currentStageIndex === 0
-					? availableStages.length - 1
+					? availableSteps.length - 1
 					: currentStageIndex - 1
 			);
 		}
 	};
-	const setStage = (stage: T) => {
-		if (availableStages.length !== 1) {
-			setCurrentStageIndex(availableStages.indexOf(stage));
+	const setStep = (stage: T) => {
+		if (availableSteps.length !== 1) {
+			setCurrentStageIndex(availableSteps.indexOf(stage));
 		}
 	};
 
-	const hasStage = (stage: T) => availableStages.includes(stage);
+	const hasStep = (stage: T) => availableSteps.includes(stage);
 
 	return [
-		availableStages[currentStageIndex],
-		nextStage,
-		previousStage,
-		setStage,
-		hasStage,
-		setAvailableStages
+		availableSteps[currentStageIndex],
+		nextStep,
+		previousStep,
+		setStep,
+		hasStep,
+		setAvailableSteps
 	];
 };
 
