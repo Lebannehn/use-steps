@@ -1,6 +1,7 @@
 .idea
 .vscode
 
+dest/
 node_modules
 yarn/*
 pnp.*
