@@ -34,7 +34,7 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 
 	useEffect(() => {
 		setCurrentStepIndex(stepsList.length ? 0 : NO_STAGE);
-	}, []);
+	}, [availableSteps]);
 
 	const _canProceed = useCallback(
 		(isForwardDirection: 0 | 1 = 1) => {
