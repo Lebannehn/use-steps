@@ -1,6 +1,6 @@
 {
-  "name": "@27-lanterns/use-stage",
-  "version": "0.1.0",
+  "name": "@27-lanterns/use-steps",
+  "version": "0.1.1",
   "description": "A custom react hook to manage wizard or ui stage transitions",
   "author": "Evgenii Astapushkin",
   "keywords": [
