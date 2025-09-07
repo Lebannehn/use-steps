@@ -33,8 +33,6 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 	const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
 	useEffect(() => {
-		console.log('set', availableSteps);
-		console.log('index', currentStepIndex);
 		setCurrentStepIndex(stepsList.length ? 0 : NO_STAGE);
 	}, []);
 
