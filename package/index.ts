@@ -55,7 +55,7 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 
 			return true;
 		},
-		[availableSteps, currentStepIndex]
+		[availableSteps, currentStepIndex, isCircular]
 	);
 
 	const nextStep = () => {

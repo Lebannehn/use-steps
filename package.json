@@ -1,30 +1,36 @@
 {
-  "name": "@27-lanterns/use-steps",
-  "version": "0.1.1",
-  "description": "A custom react hook to manage wizard or ui stage transitions",
-  "author": "Evgenii Astapushkin",
-  "keywords": [
-    "hooks",
-    "react"
-  ],
-  "license": "MIT",
-  "type": "module",
-  "main": "package/index.ts",
-  "scripts": {
-    "gulp:build": "npx gulp build"
-  },
-  "peerDependencies": {
-    "@types/react": ">=16.8.0",
-    "react": ">=16.8.0",
-    "typescript": ">=4.1.6"
-  },
-  "devDependencies": {
-    "@types/gulp": "^4.0.17",
-    "del": "^8.0.0",
-    "gulp": "^5.0.1",
-    "gulp-typescript": "^6.0.0-alpha.1"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@27-lanterns/use-steps",
+    "version": "0.1.1",
+    "description": "A custom react hook to manage wizard or ui stage transitions",
+    "author": "Evgenii Astapushkin",
+    "keywords": [
+        "hooks",
+        "react"
+    ],
+    "license": "MIT",
+    "type": "module",
+    "main": "package/index.ts",
+    "scripts": {
+        "gulp:build": "npx gulp build"
+    },
+    "peerDependencies": {
+        "@types/react": ">=16.8.0",
+        "react": ">=16.8.0",
+        "typescript": ">=4.1.6"
+    },
+    "devDependencies": {
+        "@types/gulp": "^4.0.17",
+        "del": "^8.0.0",
+        "gulp": "^5.0.1",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "through2": "^4.0.2"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "./package"
+    ]
 }

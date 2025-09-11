@@ -1,11 +1,13 @@
-import { dest, series } from 'gulp';
+import { src, dest, series } from 'gulp';
 import ts from 'gulp-typescript';
 import { deleteSync } from 'del';
+import through from 'through2';
 
 
 const dirs = {
 	included: 'package/**/*.{ts}',
-	dest: 'dest/',
+	dest: 'dist/package',
+	root: 'dist',
 };
 
 function cleanup(done) {
@@ -23,10 +25,29 @@ function compileTs() {
 	return result;
 }
 
-function transpileJs() {
+function copyAndModifyManifest() {
+	return src('./package.json')
+		.pipe(
+			through.obj(function (file, _, cb) {
+				const packageJson = JSON.parse(file.contents.toString());
+				packageJson.type = 'commonjs';
+				packageJson.main = 'package/index.js';
 
+				file.contents = Buffer.from(JSON.stringify(packageJson, null, 2));
+				cb(null, file);
+			})
+		)
+		.pipe(dest(dirs.root));
 }
 
-export const build = series(cleanup, compileTs);
+function copyRest() {
+	return src([
+			'./README.md',
+			'./LICENSE'
+		])
+		.pipe(dest(dirs.root));
+}
+
+export const build = series(cleanup, compileTs, copyAndModifyManifest, copyRest);
 
 export default build;
