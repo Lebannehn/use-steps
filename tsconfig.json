@@ -10,7 +10,7 @@
         "alwaysStrict": true,
         "baseUrl": "./package",
         "rootDir": "./package",
-        "outDir": "./dest",
+        "outDir": "./dist",
         "forceConsistentCasingInFileNames": true,
     },
     "include": [
