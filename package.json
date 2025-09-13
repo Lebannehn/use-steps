@@ -11,7 +11,10 @@
         "url": "https://github.com/lebannehn/use-steps/issues"
     },
     "homepage": "https://github.com/lebannehn/use-steps",
-    "repository": "lebannehn/use-steps",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lebannehn/use-steps.git"
+    },
     "license": "MIT",
     "type": "module",
     "main": "package/index.ts",

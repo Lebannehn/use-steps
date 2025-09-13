@@ -55,7 +55,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Dummy Publish to npm
-        run: npm publish --dry-run
-
-
+      - name: SetPackage Version
+        run: |
+          TAG = ${GITHUB_REF#refs/tags/}
+          VERSION=${TAG#v}
+          echo "Tag is $TAG"
+          echo "Version is $VERSION"
