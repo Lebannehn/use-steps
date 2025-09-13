@@ -61,7 +61,8 @@ jobs:
           VERSION=${TAG#v}
           echo "Tag is $TAG"
           echo "Version is $VERSION"
+          npm version $VERSION --no-git-tag-version 
 
       - name: Dummy Publish to npm
-        run: npm version $VERSION --no-git-tag-version && npm publish --dry-run
+        run: npm publish --dry-run
 
