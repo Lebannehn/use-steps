@@ -6,7 +6,9 @@ Supports circular and sequential transitions.
 
 ### Installation
 
-> npm i @27-lanterns/use-steps
+```console
+npm i @27-lanterns/use-steps
+```
 
 ### Params
 
@@ -38,7 +40,7 @@ const SomeWizardComponent: FC = () => {
             <h2>{currentStep}</h2>
             <p>Has intermission? {hasStep(availableSteps[1]) ? 'Yes' : 'No'}</p>
         </article>
-        <button onClick={nextStep}>Previous</button>
+        <button onClick={previousStep}>Previous</button>
         <button onClick={nextStep}>Next</button>
         <button onClick={() => setStep(availableSteps[2])}>FastForward</button>
         <button onClick={() => setAvailableSteps(altrenateSteps)}>Change steps</button>
