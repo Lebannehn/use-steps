@@ -1,0 +1,60 @@
+name: Dummy job
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches-ignore:
+      - master
+
+
+jobs:
+  build:
+    name: Build the package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run the build
+        run: npm run gulp:build
+
+      - name: Upload build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
+
+  dummy-publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Get build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v5
+        with:
+          node-version: 16
+          auth-token: ${{ secrets.NPM_TOKEN }}
+          registry-url: https://registry.npmjs.org/
+
+      - name: Dummy Publish to npm
+        run: ls -l
+
+
