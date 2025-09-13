@@ -21,14 +21,17 @@ Supports circular and sequential transitions.
 import React, { FC } from 'react';
 import useSteps from '@27-lanterns/use-steps';
 
-const availableSteps: string[] = ['Beginning', 'Intermission', 'Ending'];
-const altrenateSteps: string[] = ['Intro', 'Culmination', 'B-roll'];
+const availableSteps: string[] = ['Opening', 'Intermission', 'Ending'];
+const altrenateSteps: string[] = ['Intro', 'Culmination', 'Credits'];
 
 const SomeWizardComponent: FC = () => {
+	const [isCircular, setIsCircular] = useState(false);
 	const [currentStep, nextStep, previousStep, setStep, hasStep, setAvailableSteps] = useSteps({
 		stepsList: availableSteps,
-		isCircular: false
+		isCircular
 	});
+	
+	const toggleCircular = () => setIsCircular(!isCircular);
 
 	return <>
         <article>
@@ -39,6 +42,7 @@ const SomeWizardComponent: FC = () => {
         <button onClick={nextStep}>Next</button>
         <button onClick={() => setStep(availableSteps[2])}>FastForward</button>
         <button onClick={() => setAvailableSteps(altrenateSteps)}>Change steps</button>
+        <button onClick={toggleCircular}>Toggle circular mode</button>
     </>;
 };
 ```
