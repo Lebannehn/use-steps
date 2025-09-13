@@ -56,6 +56,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Dummy Publish to npm
-        run: ls -l
+        run: npm publish --dry-run
 
 
