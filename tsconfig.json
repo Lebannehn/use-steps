@@ -6,11 +6,11 @@
         "skipLibCheck": true,
         "declaration": true,
         "removeComments": false,
-        "target": "ES5",
+        "target": "ES6",
         "alwaysStrict": true,
         "baseUrl": "./package",
         "rootDir": "./package",
-        "outDir": "./dest",
+        "outDir": "./dist",
         "forceConsistentCasingInFileNames": true,
     },
     "include": [
