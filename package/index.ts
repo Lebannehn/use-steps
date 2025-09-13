@@ -16,7 +16,7 @@ type Props<T> = {
 	 * Circular or sequential mode.
 	 *
 	 * @example true
-	 * @dafeult false
+	 * @default false
 	 */
 	isCircular?: boolean,
 };
@@ -77,8 +77,14 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 		}
 	};
 	const setStep = (stage: T) => {
-		if (availableSteps.length !== 1) {
-			setCurrentStepIndex(availableSteps.indexOf(stage));
+		if (availableSteps.length !== 1 ) {
+			const index = availableSteps.indexOf(stage);
+
+			if (!~index) {
+				throw hasNoStagesError();
+			}
+
+			setCurrentStepIndex(index);
 		}
 	};
 
