@@ -51,8 +51,9 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 18
-          auth-token: ${{ secrets.NPM_TOKEN }}
           registry-url: https://registry.npmjs.org/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Dummy Publish to npm
         run: ls -l
