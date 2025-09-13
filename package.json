@@ -7,6 +7,7 @@
         "hooks",
         "react"
     ],
+    "homepage": "https://github.com/lebannehn/use-steps",
     "repository": "lebannehn/use-steps",
     "license": "MIT",
     "type": "module",
