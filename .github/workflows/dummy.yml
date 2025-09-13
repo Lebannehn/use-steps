@@ -59,7 +59,7 @@ jobs:
         run: |
           TAG=${GITHUB_REF#refs/tags/}
           KEK=v1.2.3
-          VERSION=${TAG#v}
+          VERSION=${KEK#v}
           echo "Tag is $TAG"
           echo "Version is $VERSION"
           npm version $VERSION --no-git-tag-version 
