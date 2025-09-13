@@ -58,6 +58,7 @@ jobs:
       - name: SetPackage Version
         run: |
           TAG=${GITHUB_REF#refs/tags/}
+          KEK=v1.2.3
           VERSION=${TAG#v}
           echo "Tag is $TAG"
           echo "Version is $VERSION"
