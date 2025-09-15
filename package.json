@@ -5,7 +5,10 @@
     "author": "Evgenii Astapushkin <lebannehn.karnimirie@gmail.com>",
     "keywords": [
         "hooks",
-        "react"
+        "react",
+        "steps",
+        "wizard",
+        "stages"
     ],
     "bugs": {
         "url": "https://github.com/lebannehn/use-steps/issues"
