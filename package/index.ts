@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { UseStepsReturn } from './types';
 import { NO_STAGE } from './constants';
-import { hasNoStagesError } from './error';
+import { hasNoStepsError } from './error';
 
 
 type Props<T> = {
@@ -39,7 +39,7 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 	const _canProceed = useCallback(
 		(isForwardDirection: 0 | 1 = 1) => {
 			if (currentStepIndex === NO_STAGE) {
-				throw hasNoStagesError();
+				throw hasNoStepsError();
 			}
 			if (availableSteps.length === 1) {
 				return false;
@@ -81,7 +81,7 @@ const useSteps = <T>({ stepsList, isCircular = false }: Props<T>): UseStepsRetur
 			const index = availableSteps.indexOf(stage);
 
 			if (!~index) {
-				throw hasNoStagesError();
+				throw hasNoStepsError();
 			}
 
 			setCurrentStepIndex(index);
